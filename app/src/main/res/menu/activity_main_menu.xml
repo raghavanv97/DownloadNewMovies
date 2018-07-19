@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/setting"
+        android:title="Setting"/>
+
+    <item android:id="@+id/activity_main_menu"
+        android:title="Schedule Monthly" />
+
+    <item android:id="@+id/cancel_schedule"
+        android:title="Cancel Schedule"/>
+
+
+</menu>
