@@ -7,6 +7,15 @@
         <item>Schedule 1 Minute</item>
     </array>
 
+    <string-array name="imdb_rating">
+        <item>7</item>
+        <item>7.5</item>
+        <item>8</item>
+        <item>8.5</item>
+        <item>9</item>
+        <item>9.5</item>
+    </string-array>
+
     <!-- Global string -->
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>

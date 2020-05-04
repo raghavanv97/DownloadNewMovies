@@ -253,7 +253,8 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".SettingActivity"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
