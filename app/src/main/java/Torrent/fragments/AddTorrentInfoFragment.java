@@ -148,44 +148,47 @@ public class AddTorrentInfoFragment extends Fragment
             return;
         }
 
-        torrentNameField.setText(info.torrentName);
-        sha1HashView.setText(info.sha1Hash);
-        pathToUploadView.setText(downloadDir);
-        startTorrent.setChecked(true);
+        if (torrentNameField!=null) {
+            torrentNameField.setText(info.torrentName);
+            sha1HashView.setText(info.sha1Hash);
+            pathToUploadView.setText(downloadDir);
+            startTorrent.setChecked(true);
 
-        if (TextUtils.isEmpty(info.comment)) {
-            commentViewLayout.setVisibility(View.GONE);
-        } else {
-            commentView.setText(info.comment);
-            commentViewLayout.setVisibility(View.VISIBLE);
-        }
 
-        if (TextUtils.isEmpty(info.createdBy)) {
-            createdByViewLayout.setVisibility(View.GONE);
-        } else {
-            createdByView.setText(info.createdBy);
-            createdByViewLayout.setVisibility(View.VISIBLE);
-        }
+            if (TextUtils.isEmpty(info.comment)) {
+                commentViewLayout.setVisibility(View.GONE);
+            } else {
+                commentView.setText(info.comment);
+                commentViewLayout.setVisibility(View.VISIBLE);
+            }
 
-        if (info.torrentSize == 0 || info.fileCount == 0) {
-            sizeAndCountViewLayout.setVisibility(View.GONE);
-        } else {
-            torrentSizeView.setText(Formatter.formatFileSize(activity, info.torrentSize));
-            fileCountView.setText(Integer.toString(info.fileCount));
-            freeSpace.setText(
-                    String.format(
-                            getString(R.string.free_space),
-                            Formatter.formatFileSize(activity.getApplicationContext(),
-                                    FileIOUtils.getFreeSpace(downloadDir))));
-            sizeAndCountViewLayout.setVisibility(View.VISIBLE);
-        }
+            if (TextUtils.isEmpty(info.createdBy)) {
+                createdByViewLayout.setVisibility(View.GONE);
+            } else {
+                createdByView.setText(info.createdBy);
+                createdByViewLayout.setVisibility(View.VISIBLE);
+            }
 
-        if (info.creationDate == 0) {
-            creationDateViewLayout.setVisibility(View.GONE);
-        } else {
-            creationDateView.setText(SimpleDateFormat.getDateTimeInstance()
-                    .format(new Date(info.creationDate)));
-            creationDateViewLayout.setVisibility(View.VISIBLE);
+            if (info.torrentSize == 0 || info.fileCount == 0) {
+                sizeAndCountViewLayout.setVisibility(View.GONE);
+            } else {
+                torrentSizeView.setText(Formatter.formatFileSize(activity, info.torrentSize));
+                fileCountView.setText(Integer.toString(info.fileCount));
+                freeSpace.setText(
+                        String.format(
+                                getString(R.string.free_space),
+                                Formatter.formatFileSize(activity.getApplicationContext(),
+                                        FileIOUtils.getFreeSpace(downloadDir))));
+                sizeAndCountViewLayout.setVisibility(View.VISIBLE);
+            }
+
+            if (info.creationDate == 0) {
+                creationDateViewLayout.setVisibility(View.GONE);
+            } else {
+                creationDateView.setText(SimpleDateFormat.getDateTimeInstance()
+                        .format(new Date(info.creationDate)));
+                creationDateViewLayout.setVisibility(View.VISIBLE);
+            }
         }
     }
 
