@@ -7,7 +7,8 @@ public class ApiClient {
 
 //    private static final String BASE_URL = "https://yts.am/api/v2/";
     static int pages = 1;
-private static final String BASE_URL = "https://tv-v2.api-fetch.website";
+//private static final String BASE_URL = "https://tv-v2.api-fetch.website";
+private static final String BASE_URL = "https://movies-v2.api-fetch.sh";
     private static Retrofit retrofit = null;
 
 
